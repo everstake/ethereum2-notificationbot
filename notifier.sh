@@ -37,13 +37,13 @@ else
         fi
 fi
 }
-
-CHATIDS=$(cat ${PWD}/eth2-ips | grep -v "#" | grep "CHATIDS" | awk -F "=" '{print $2}')
-BOTKEY=$(cat ${PWD}/eth2-ips | grep -v "#" | grep "BOTKEY" | awk -F "=" '{print $2}')
+CONFIG="config.ini"
+CHATIDS=$(cat ${PWD}/${CONFIG} | grep -v "#" | grep "CHATIDS" | awk -F "=" '{print $2}')
+BOTKEY=$(cat ${PWD}/${CONFIG} | grep -v "#" | grep "BOTKEY" | awk -F "=" '{print $2}')
 STATE=0
 ITERATIONS=3
 while true; do
-        NODEIP=$(cat ${PWD}/eth2-ips | grep -v "#" | grep "NODES" | awk -F "=" '{print $2}');
+        NODEIP=$(cat ${PWD}/${CONFIG} | grep -v "#" | grep "NODES" | awk -F "=" '{print $2}');
         for IP in $NODEIP
                 do
                         check $IP
