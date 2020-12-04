@@ -38,8 +38,8 @@ else
 fi
 }
 CONFIG="config.ini"
-CHATIDS=$(cat ${PWD}/${CONFIG} | grep -v "#" | grep "CHATIDS" | awk -F "=" '{print $2}')
-BOTKEY=$(cat ${PWD}/${CONFIG} | grep -v "#" | grep "BOTKEY" | awk -F "=" '{print $2}')
+CHATIDS=$(cat ${PWD}/${CONFIG} | grep -v "#" | grep "CHATIDS" | awk -F "=" '{print $2}');
+BOTKEY=$(cat ${PWD}/${CONFIG} | grep -v "#" | grep "BOTKEY" | awk -F "=" '{print $2}');
 STATE=0
 ITERATIONS=3
 while true; do
